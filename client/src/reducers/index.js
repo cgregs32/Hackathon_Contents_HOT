@@ -4,7 +4,7 @@ import flash from './flash';
 
 const rootReducer = combineReducers({
   user,
-  flash
+  flash,
 });
 
 export default rootReducer;
