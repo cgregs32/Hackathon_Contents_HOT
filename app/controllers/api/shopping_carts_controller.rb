@@ -9,7 +9,10 @@ class Api::ShoppingCartsController < ApplicationController
     end
 
     def show
-
+      cart = ShoppingCart.find(1)
+      items = cart.cart_items.map { |item| item.item_id }
+      binding.pry
+      render json: Menu.find(items)
     end
 
     private

@@ -194,8 +194,11 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_shopping_cart
+<<<<<<< b11b26e06c227d8e434378b5d8573ee6e66b3bc9
   annotate
   database_cleaner
+=======
+>>>>>>> adding things
   devise
   devise_token_auth
   factory_bot_rails

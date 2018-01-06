@@ -33,7 +33,9 @@ gem 'acts_as_shopping_cart'
 
 
 group :development, :test do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry'
+  gem 'faker'
   gem 'rspec-rails'
   gem 'annotate'
 end

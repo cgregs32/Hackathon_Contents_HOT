@@ -3,6 +3,6 @@
     item: Faker::Food.dish,
     price: Faker::Commerce.price,
   )
-end 
+end
 
 puts 'Menu Items created'
