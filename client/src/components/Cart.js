@@ -4,22 +4,16 @@ import { Segment, Table, Header } from 'semantic-ui-react'
 import axios from 'axios'
 
 class Cart extends React.Component {
-  state = { cartItems: [], loaded:false, total:'' }
+  state = { cartItems: [], loaded:false }
 
   componentDidMount() {
     axios.get('/api/cart/show')
       .then(res => {
         this.setState( { cartItems: res.data, loaded: !this.state.loaded } )
     })
-    axios.get('/api/cart/total')
-      .then(res => {
-        debugger
-        this.setState( { total: res.data } )
-      })
   }
 
   mapCartItems = () => {
-    debugger
     const { cartItems } = this.state
     return cartItems.map(item => {
       return (
@@ -34,7 +28,16 @@ class Cart extends React.Component {
     })
   }
 
+  cart_total = () => {
+    const { cartItems } = this.state
+    const total = cartItems.reduce( (item, total) =>{
+      debugger
+      item.price + total
+    })
+  }
+
   render () {
+    const {loaded} = this.state
     return (
       <Segment className='container'>
         <Table celled striped>
@@ -44,14 +47,14 @@ class Cart extends React.Component {
             </Table.Row>
           </Table.Header>
           <Table.Body>
-            {this.state.loaded ? this.mapCartItems() : null }
+            { loaded ? this.mapCartItems() : null }
           </Table.Body>
 
           <Table.Footer>
             <Table.Row>
               <Table.HeaderCell></Table.HeaderCell>
               <Table.HeaderCell></Table.HeaderCell>
-              <Table.HeaderCell>Total: </Table.HeaderCell>
+              <Table.HeaderCell>Total: { loaded ? this.cart_total() : null }</Table.HeaderCell>
             </Table.Row>
           </Table.Footer>
         </Table>

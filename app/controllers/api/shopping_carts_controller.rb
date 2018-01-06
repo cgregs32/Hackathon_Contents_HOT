@@ -8,7 +8,7 @@ class Api::ShoppingCartsController < ApplicationController
     end
 
     def show
-      items = cart.cart_items.map { |item| item.item_id }
+      items = @cart.cart_items.map { |item| item.item_id }
       render json: Menu.find(items)
     end
 
