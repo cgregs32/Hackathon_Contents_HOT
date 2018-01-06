@@ -41,12 +41,16 @@ GEM
     acts_as_shopping_cart (0.4.1)
       money-rails (~> 1.5)
       rails (> 4)
+    annotate (2.7.2)
+      activerecord (>= 3.2, < 6.0)
+      rake (>= 10.4, < 13.0)
     arel (8.0.0)
     bcrypt (3.1.11)
     builder (3.2.3)
-    byebug (9.1.0)
+    coderay (1.1.2)
     concurrent-ruby (1.0.5)
     crass (1.0.3)
+    database_cleaner (1.6.2)
     devise (4.3.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -64,8 +68,6 @@ GEM
     factory_bot_rails (4.8.2)
       factory_bot (~> 4.8.2)
       railties (>= 3.0.0)
-    faker (1.8.7)
-      i18n (>= 0.7)
     ffi (1.9.18)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
@@ -103,6 +105,9 @@ GEM
       rack (>= 1.6.2, < 3)
     orm_adapter (0.5.0)
     pg (0.21.0)
+    pry (0.11.3)
+      coderay (~> 1.1.0)
+      method_source (~> 0.9.0)
     puma (3.11.0)
     rack (2.0.3)
     rack-test (0.8.2)
@@ -189,14 +194,15 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_shopping_cart
-  byebug
+  annotate
+  database_cleaner
   devise
   devise_token_auth
   factory_bot_rails
-  faker
   listen (>= 3.0.5, < 3.2)
   omniauth
   pg (~> 0.18)
+  pry
   puma (~> 3.7)
   rails (~> 5.1.4)
   rspec-rails
