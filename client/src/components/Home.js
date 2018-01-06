@@ -12,7 +12,7 @@ class Home extends Component {
           <Grid columns={3}>
             <Grid.Row>
               <Grid.Column>
-                <Card style={styles.titleCard}>
+                <Card color='yellow' style={styles.titleCard}>
                   <Card.Content>
                     <Header as='h1' style={styles.cardHeader}>New Golden Dragon</Header>
                   </Card.Content>
@@ -35,7 +35,7 @@ class Home extends Component {
 
               </Grid.Column>
               <Grid.Column>
-                <Card style={styles.hoursCard}>
+                <Card color='yellow' style={styles.hoursCard}>
                   <Card.Content>
                     <Header as='h3' style={styles.hoursHeader}>HOURS</Header>
                   </Card.Content>
@@ -60,6 +60,14 @@ class Home extends Component {
                       <List style={styles.contactInfo}>
                         <List.Item>Phone: (801)487-9888</List.Item>
                         <List.Item>Fax: (801)483-1222</List.Item>
+                        <br />
+                        <List.Item>
+                          Address:
+                          <br />
+                          1716 South State Street
+                          <br />
+                          Salt Lake City, UT 84115
+                        </List.Item>
                       </List>
                   </Card.Description>
                   </Card.Content>
@@ -93,12 +101,14 @@ const styles = {
     color: '#FFFFF0',
     fontSize: '18',
     textAlign: 'center',
-    fontSize: 40
+    fontSize: 40,
+    fontFamily: 'Libre Baskerville',
+
   },
   titleDescription: {
     color: '#FFFFF0',
     textAlign: 'center',
-    fontSize: 18,
+    fontSize: 16,
     fontFamily: 'Libre Baskerville'
   },
   hoursCard: {
@@ -109,17 +119,20 @@ const styles = {
     width: '347px'
   },
   hoursHeader: {
-    backgroundColor: 'black',
     color: 'white',
-    textAlign: 'center'
+    textAlign: 'center',
+    fontFamily: 'Libre Baskerville',
+
   },
   hoursList: {
     color: 'white',
-    textAlign: 'center'
+    textAlign: 'center',
+    fontFamily: 'Libre Baskerville'
   },
   contactInfo: {
     color: 'white',
-    textAlign: 'center'
+    textAlign: 'center',
+    fontFamily: 'Libre Baskerville'
   }
 }
 
