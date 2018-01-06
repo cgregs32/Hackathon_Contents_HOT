@@ -5,9 +5,9 @@ class CreateCartItems < ActiveRecord::Migration[5.1]
       t.integer :owner_id
       t.string :owner_type
       t.integer :quantity
-      t.integer :item_id
+      t.integer :item_id, null: false
       t.string :item_type
-      t.float :price
+      t.float :price, null: false, default: 0.0
 
       t.timestamps
     end
