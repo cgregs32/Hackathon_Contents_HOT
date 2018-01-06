@@ -4,9 +4,10 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import MenuCard from './MenuCard';
+import MenuForm from './MenuForm';
 
 class Menu extends Component {
-  state = { editing: false, menus: [] }
+  state = { menus: [], form: false }
 
   componentDidMount() {
     axios.get('/api/menus')
@@ -18,32 +19,38 @@ class Menu extends Component {
       })
   }
 
-  toggleEdit = () => {
-    this.setState({ editing: !this.state.editing })
+  newItem = () => {
   }
 
-  handleChange = (e) => {
-    this.setState({ menus: e.target.value})
-  }
-
-  editItem = () => {
-    const { id } = this.state.menus;
-    axios.put(`/api/menus/${id}`), { menus: this.state.menus.item}
-  }
-
-  editMenu = () => {
-    <Input type='text' defaultValue={this.state.menus.item} onChange={this.handleChange} />
-  }
-
-  deleteItem = () => {
-    console.log('Delete')
+  toggleForm = () => {
+    this.setState({ form: !this.state.form })
   }
 
   render() {
+    if (this.state.form)
     return (
-      <div>
+      <Segment>
+        <Header textAlign='center' as='h2'>Menu</Header>
+        <MenuForm />
+        <Button 
+          primary 
+          color='green'
+          onClick={() => this.toggleForm()}
+          >Cancel</Button>
         <MenuCard menus={this.state.menus} />
-      </div>
+      </Segment>
+    )
+    else 
+    return (
+      <Segment>
+        <Header textAlign='center' as='h2'>Menu</Header>
+        <Button
+          primary
+          color='green'
+          onClick={() => this.toggleForm()}
+        >Add New Item</Button>
+        <MenuCard menus={this.state.menus} />
+      </Segment>
     )
   }
 }

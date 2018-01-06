@@ -11,6 +11,7 @@ class Api::MenusController < ApplicationController
 
   def create
     @menu = Menu.new(menu_params)
+    binding.pry
     if @menu.save 
       render :show, status: :created
     else
