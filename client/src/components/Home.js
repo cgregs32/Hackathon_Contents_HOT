@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import { Header, Image, Segment, Card, Grid, List } from 'semantic-ui-react';
+import { Header, Image, Segment, Card, Grid, List, Container } from 'semantic-ui-react';
 
 class Home extends Component {
   render() {
     return (
       <div style={styles.homeImage}>
+        <Container>
         <Segment style={styles.opacity}>
+
           <Grid columns={3}>
             <Grid.Row>
               <Grid.Column>
@@ -15,8 +17,7 @@ class Home extends Component {
                   </Card.Content>
                   <Card.Content>
                     <Card.Description style={styles.titleDescription}>
-                      Welcome to One of the Finest Chinese Restaurants in Salt Lake City
-                      the Best Dim Sum in Salt Lake City!
+                      Welcome to One of the Finest Chinese Restaurants in Salt Lake City! Owned and operated by the renowned chef Xiao, New Golden Dragon—specializing in Dim Sum and Asian cuisine—has raised the bar for Chinese food in Utah.
                     </Card.Description>
                   </Card.Content>
                 </Card>
@@ -33,22 +34,41 @@ class Home extends Component {
 
               </Grid.Column>
               <Grid.Column>
-                <List style={styles.hoursList}>
-                  <List.Item>
-                    <Header as='h3'>HOURS:</Header>
-                    </List.Item>
-                  <List.Item>Sunday 10:30AM-10PM</List.Item>
-                  <List.Item>Monday 11AM-9:30PM</List.Item>
-                  <List.Item>Tuesday 11AM-9:30PM</List.Item>
-                  <List.Item>Wednesday 11AM-9:30PM</List.Item>
-                  <List.Item>Thursday 11AM-9:30PM</List.Item>
-                  <List.Item>Friday 11AM-10PM</List.Item>
-                  <List.Item>Saturday 10:30PM-10PM</List.Item>
-                </List>
+                <Card style={styles.hoursCard}>
+                  <Card.Content>
+                    <Header as='h3' style={styles.hoursHeader}>HOURS</Header>
+                  </Card.Content>
+                    <Card.Content>
+                      <Card.Description>
+                        <List style={styles.hoursList}>
+                          <List.Item>Sunday 10:30AM-10PM</List.Item>
+                          <List.Item>Monday 11AM-9:30PM</List.Item>
+                          <List.Item>Tuesday 11AM-9:30PM</List.Item>
+                          <List.Item>Wednesday 11AM-9:30PM</List.Item>
+                          <List.Item>Thursday 11AM-9:30PM</List.Item>
+                          <List.Item>Friday 11AM-10PM</List.Item>
+                          <List.Item>Saturday 10:30PM-10PM</List.Item>
+                        </List>
+                    </Card.Description>
+                  </Card.Content>
+                  <Card.Content>
+                    <Header as='h3' style={styles.hoursHeader}>CONTACT</Header>
+                  </Card.Content>
+                  <Card.Content>
+                    <Card.Description>
+                      <List style={styles.contactInfo}>
+                        <List.Item>Phone: (801)487-9888</List.Item>
+                        <List.Item>Fax: (801)483-1222</List.Item>
+                      </List>
+                  </Card.Description>
+                  </Card.Content>
+                </Card>
               </Grid.Column>
             </Grid.Row>
           </Grid>
+
         </Segment>
+        </Container>
       </div>
     );
   }
@@ -56,8 +76,7 @@ class Home extends Component {
 
 const styles = {
   opacity: {
-    backgroundColor: 'rgba(200, 200, 200, 0.7)',
-    height: '100vh'
+    backgroundColor: 'rgba(200, 200, 200, 0.6)',
   },
   homeImage: {
     backgroundImage: "url(http://res.cloudinary.com/yuriecloud/image/upload/v1515259568/food_small1_qalnzz.jpg)",
@@ -65,7 +84,8 @@ const styles = {
   },
   titleCard: {
     backgroundColor: 'black',
-    color: 'white'
+    color: 'white',
+    width: '347px'
   },
   cardHeader: {
     color: '#FFFFF0',
@@ -78,13 +98,25 @@ const styles = {
     textAlign: 'center',
     fontSize: 18
   },
-  hoursList: {
-    marginTop: 150,
-    marginRight: 130,
-    display: 'flex',
+  hoursCard: {
+    backgroundColor: 'black',
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'column',
+    width: '347px'
+  },
+  hoursHeader: {
+    backgroundColor: 'black',
+    color: 'white',
+    textAlign: 'center'
+  },
+  hoursList: {
+    color: 'white',
+    textAlign: 'center'
+  },
+  contactInfo: {
+    color: 'white',
+    textAlign: 'center'
   }
 }
 
