@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Header, Image, Segment, Card, Grid, List, Container } from 'semantic-ui-react';
+import '../index.css';
 
 class Home extends Component {
   render() {
@@ -85,7 +86,8 @@ const styles = {
   titleCard: {
     backgroundColor: 'black',
     color: 'white',
-    width: '347px'
+    width: '347px',
+    fontFamily: 'Libre Baskerville'
   },
   cardHeader: {
     color: '#FFFFF0',
@@ -96,7 +98,8 @@ const styles = {
   titleDescription: {
     color: '#FFFFF0',
     textAlign: 'center',
-    fontSize: 18
+    fontSize: 18,
+    fontFamily: 'Libre Baskerville'
   },
   hoursCard: {
     backgroundColor: 'black',

@@ -16,7 +16,7 @@ class NavBar extends Component {
             onClick={() => dispatch(handleLogout(history))}
           />
           <Link to='/menu'>
-            <Menu.Item name='Menu' />
+            <Menu.Item name='Menu' style={styles.textOnPage}/>
           </Link>
         </Menu.Menu>
       );
@@ -24,19 +24,19 @@ class NavBar extends Component {
     return (
       <Menu.Menu position='right'>
         <Link to='/register'>
-          <Menu.Item name='Register' />
+          <Menu.Item name='Register' style={styles.textOnPage}/>
         </Link>
         <Link to='/login'>
-          <Menu.Item name='Login' />
+          <Menu.Item name='Login' style={styles.textOnPage}/>
         </Link>
         <Link to='/menu'>
-          <Menu.Item name='Menu' />
+          <Menu.Item name='Menu' style={styles.textOnPage}/>
         </Link>
         <Link to='/about'>
-          <Menu.Item name='About' />
+          <Menu.Item name='About' style={styles.textOnPage}/>
         </Link>
         <Link to='/cart'>
-          <Menu.Item name='Cart' />
+          <Menu.Item name='Cart' style={styles.textOnPage}/>
         </Link>
       </Menu.Menu>
     );
@@ -47,12 +47,18 @@ class NavBar extends Component {
       <div>
         <Menu pointing secondary>
           <Link to='/'>
-            <Menu.Item name='home' />
+            <Menu.Item name='home' style={styles.textOnPage}/>
           </Link>
           { this.rightNavs() }
         </Menu>
       </div>
     );
+  }
+}
+
+const styles = {
+  textOnPage: {
+    fontFamily: 'Libre Baskerville'
   }
 }
 
