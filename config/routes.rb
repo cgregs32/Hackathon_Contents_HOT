@@ -3,10 +3,12 @@ Rails.application.routes.draw do
   namespace :api do
     resources :menus
     resources :cart_items
+    resources :shopping_carts
 
 
     # get '/cart_items/clear', to: 'cart_items#clear_cart'
-    get '/cart/show', to: 'shopping_cart#show'
+    get '/cart/show', to: 'shopping_carts#show'
+    get '/cart/total', to: 'shopping_carts#cart_total'
 
   end
 
