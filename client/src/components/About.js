@@ -5,7 +5,7 @@ class About extends Component {
   render() {
     return (
       <Segment basic>
-      <Header as='h1' textAlign='center'>About Component</Header>
+      <Header as='h1' textAlign='center'>About New Golden Dragon Chinese Restaurant</Header>
       </Segment>
     );
   }
