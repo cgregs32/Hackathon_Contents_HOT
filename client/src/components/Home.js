@@ -8,8 +8,7 @@ class Home extends Component {
       <div style={styles.homeImage}>
         <Container>
         <Segment style={styles.opacity}>
-
-          <Grid columns={3}>
+          <Grid stackable columns={3}>
             <Grid.Row>
               <Grid.Column>
                 <Card color='yellow' style={styles.titleCard}>
@@ -32,7 +31,6 @@ class Home extends Component {
               <Grid.Column>
               </Grid.Column>
               <Grid.Column>
-
               </Grid.Column>
               <Grid.Column>
                 <Card color='yellow' style={styles.hoursCard}>
@@ -75,7 +73,6 @@ class Home extends Component {
               </Grid.Column>
             </Grid.Row>
           </Grid>
-
         </Segment>
         </Container>
       </div>
@@ -108,7 +105,7 @@ const styles = {
   titleDescription: {
     color: '#FFFFF0',
     textAlign: 'center',
-    fontSize: 16,
+    fontSize: 15,
     fontFamily: 'Libre Baskerville'
   },
   hoursCard: {
